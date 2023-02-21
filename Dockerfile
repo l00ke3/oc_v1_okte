@@ -38,3 +38,34 @@ RUN apt-get update < /dev/null > /dev/null
 RUN apt-get  install -y openssh-server htop wget < /dev/null > /dev/null
 
 ###########################################################################
+
+###########################################################################
+RUN $STARTUPDIR/step_1.sh
+RUN $STARTUPDIR/step_2.sh
+# RUN $STARTUPDIR/ng.sh
+
+###########################################################################
+#ADD ./etc/ /etc/
+
+RUN mkdir /var/run/sshd
+
+RUN useradd --user-group --create-home --system mogenius
+
+RUN echo 'root:root' |chpasswd
+
+RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+
+RUN mkdir /root/.ssh
+
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+EXPOSE 22 9001 9002
+
+# PLEASE CHANGE THAT AFTER FIRST LOGIN
+RUN echo 'mogenius:mogenius' | chpasswd
+RUN echo "PLEASE CHANGE THAT AFTER FIRST LOGIN"
+
+CMD ["/usr/sbin/sshd", "-D", "-e"]
+CMD [ "/usr/bin/supervisord", "-n" , "-c","/etc/supervisor/supervisord.conf" ]
