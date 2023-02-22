@@ -80,6 +80,7 @@ RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" pythony
 
 RUN $STARTUPDIR/step_2.sh
 RUN $STARTUPDIR/unroot.sh
+COPY xorg.conf /etc/X11/xorg.conf
 #groupadd -g "${GID}" python \
 #  && 
 USER pythony
