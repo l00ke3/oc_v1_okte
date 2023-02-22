@@ -63,3 +63,4 @@ pip3 install Cython
 #git clone https://github.com/Xpra-org/xpra; cd xpra
 
 #python3 ./setup.py install
+chown -R pythony:pythony /home/pythony
