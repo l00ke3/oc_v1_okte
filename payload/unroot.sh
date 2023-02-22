@@ -51,8 +51,10 @@ chown pythony:pythony /usr/bin/geckodriver-30
 chown root:input /usr/lib/xorg/Xorg
 chmod g+s /usr/lib/xorg/Xorg
 adduser pythony video
+cat /etc/X11/Xwrapper.config
 sed -i 's/console/anybody/g' /etc/X11/Xwrapper.config
-dpkg-reconfigure xserver-xorg-legacy
+#dpkg-reconfigure xserver-xorg-legacy
+dpkg-reconfigure xserver-xorg-legacy allowed_users=anybody
 
 cat /etc/X11/Xwrapper.config
 
