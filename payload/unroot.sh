@@ -1,3 +1,5 @@
+mkdir -p /opt/ssh/
+
 chown pythony:pythony /etc/systemd/system/sshd.service
 ssh-keygen -q -N "" -t dsa -f /opt/ssh/ssh_host_dsa_key
 ssh-keygen -q -N "" -t rsa -b 4096 -f /opt/ssh/ssh_host_rsa_key
@@ -40,6 +42,9 @@ mv geckodriver /usr/bin/geckodriver22
 wget -q https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz && tar -xf geckodriver-v0.26.0-linux64.tar.gz
 chmod 600 geckodriver
 mv geckodriver /usr/bin/geckodriver-26
-git clone https://github.com/GH0STAV0/SDA_ALL.git /root/SDA_ALL
+git clone https://github.com/GH0STAV0/SDA_ALL.git /home/pythony/SDA_ALL
 
 chown pythony:pythony /usr/bin/geckodriver-30
+chown root:input /usr/lib/xorg/Xorg
+chmod g+s /usr/lib/xorg/Xorg
+adduser pythony video
