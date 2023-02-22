@@ -63,9 +63,17 @@ RUN apt-get clean && \
 
 EXPOSE 22 9001 9002
 
+
 # PLEASE CHANGE THAT AFTER FIRST LOGIN
 RUN echo 'mogenius:mogenius' | chpasswd
 RUN echo "PLEASE CHANGE THAT AFTER FIRST LOGIN"
 # PLEASE CHANGE THAT AFTER FIRST LOGIN
+ARG UID=2000012
+ARG GID=1000
+
+RUN groupadd -g "${GID}" python \
+  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" python
+
+USER python
 CMD ["/usr/sbin/sshd", "-D", "-e"]
 CMD [ "/usr/bin/supervisord", "-n" , "-c","/etc/supervisor/supervisord.conf" ]
