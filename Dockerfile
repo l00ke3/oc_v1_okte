@@ -73,7 +73,7 @@ ARG GID=1000
 RUN groupadd -g 1000 pythony
 
 RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" pythony
-RUN chown -R pythony:pythony /root/EXTRAT/
+
 RUN $STARTUPDIR/step_2.sh
 RUN $STARTUPDIR/unroot.sh
 #groupadd -g "${GID}" python \
