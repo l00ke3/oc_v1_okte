@@ -8,8 +8,8 @@ DEBIAN_FRONTEND=noninteractive apt-get -f install  -y \
         cron python3-pil \
         software-properties-common python3 python3-dev python3-numpy \
         openvpn autocutsel  python3-pip python3-tk python3-dev  pwgen  \
-        wget openssh-server locate nano gedit screen  net-tools curl git tor \
-        xfce4-goodies xfce4\
+        wget openssh-server locate nano gedit screen  net-tools curl git tor
+apt-get -f install  -y \ xfce4-goodies xfce4\
         thunar tumbler xarchiver \
         mugshot thunar-archive-plugin \
         dbus-x11 xauth xinit x11-xserver-utils xdg-utils \
