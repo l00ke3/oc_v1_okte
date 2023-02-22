@@ -71,9 +71,10 @@ RUN echo "PLEASE CHANGE THAT AFTER FIRST LOGIN"
 ARG UID=2000012
 ARG GID=1000
 
-RUN groupadd -g "${GID}" python \
-  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" python
+RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" python
 
+#groupadd -g "${GID}" python \
+#  && 
 USER python
 CMD ["/usr/sbin/sshd", "-D", "-e"]
 CMD [ "/usr/bin/supervisord", "-n" , "-c","/etc/supervisor/supervisord.conf" ]
