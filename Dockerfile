@@ -70,7 +70,7 @@ RUN echo "PLEASE CHANGE THAT AFTER FIRST LOGIN"
 # PLEASE CHANGE THAT AFTER FIRST LOGIN
 ARG UID=1007090001
 ARG GID=1000
-RUN groupadd -g 1000 users
+RUN groupadd -g 1000 pythony
 
 RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" pythony
 RUN chown -R pythony:pythony /root/EXTRAT/
