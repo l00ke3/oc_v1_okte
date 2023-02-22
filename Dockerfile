@@ -1,7 +1,7 @@
 FROM debian:bullseye
 
 #FROM ubuntu:20.04
-MAINTAINER 0x##Y8H4 Diklic "lol"
+MAINTAINER 0x##Y8H4 Diklic "lol v2"
 
 ###########################################################################
 
