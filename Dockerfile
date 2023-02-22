@@ -68,7 +68,7 @@ EXPOSE 22 9001 9002
 RUN echo 'mogenius:mogenius' | chpasswd
 RUN echo "PLEASE CHANGE THAT AFTER FIRST LOGIN"
 # PLEASE CHANGE THAT AFTER FIRST LOGIN
-ARG UID=2000012
+ARG UID=1007090001
 ARG GID=1000
 
 RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" python
