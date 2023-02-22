@@ -4,8 +4,8 @@ echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-deskto
 
 
 echo "$US_PS"
-username="azer"
-password="azer"
+username="pythony"
+password="pythony"
 
 
 
@@ -15,8 +15,8 @@ useradd -m $username
 adduser $username sudo
 echo $username':'$password | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
-mkdir -p /home/azer/.config
-chown azer:azer /home/azer/.config
+mkdir -p /home/pythony/.config
+chown pythony:pythony /home/pythony/.config
 apt install --assume-yes xfce4 desktop-base xfce4-terminal nano
 apt remove --assume-yes gnome-terminal
 apt --assume-yes autoremove
