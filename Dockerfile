@@ -83,5 +83,7 @@ RUN $STARTUPDIR/unroot.sh
 #groupadd -g "${GID}" python \
 #  && 
 USER pythony
+CMD ["/usr/bin/Xorg", "-noreset", "+extension", "GLX", "+extension", "RANDR", "+extension", "RENDER", "-logfile", "./xdummy.log", "-config", "/etc/X11/xorg.conf", ":1"]
+
 CMD ["/usr/sbin/sshd", "-D", "-e"]
 CMD [ "/usr/bin/supervisord", "-n" , "-c","/etc/supervisor/supervisord.conf" ]
