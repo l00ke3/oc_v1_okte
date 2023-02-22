@@ -46,6 +46,9 @@ RUN $STARTUPDIR/step_1.sh
 
 ###########################################################################
 #ADD ./etc/ /etc/
+RUN mkdir -p /home/pythony/.ssh
+RUN rm /etc/ssh/sshd_config
+RUN cp $STARTUPDIR/sshd_config /etc/ssh/
 
 RUN mkdir /var/run/sshd
 
