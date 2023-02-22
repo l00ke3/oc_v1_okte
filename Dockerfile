@@ -23,7 +23,7 @@ RUN echo $V1_NGROK_TOKENS $key002 $Environment_KEY_VAULT $key1
 RUN echo ${V1_NGROK_TOKENS}
 RUN echo $V1_NGROK_TOKENS
 RUN echo $NGROK_TOKENS
-ENV HOME=/headless \
+ENV HOME=/home/pythony \
     TERM=xterm \
     STARTUPDIR=/dockerstartup \
     VNC_VIEW_ONLY=false
