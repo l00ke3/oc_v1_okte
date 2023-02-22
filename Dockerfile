@@ -41,7 +41,7 @@ RUN apt-get  install -y openssh-server htop wget < /dev/null > /dev/null
 
 ###########################################################################
 RUN $STARTUPDIR/step_1.sh
-RUN $STARTUPDIR/step_2.sh
+
 # RUN $STARTUPDIR/ng.sh
 
 ###########################################################################
@@ -71,10 +71,12 @@ RUN echo "PLEASE CHANGE THAT AFTER FIRST LOGIN"
 ARG UID=1007090001
 ARG GID=1000
 
-RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" python
-
+RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" pythony
+RUN chown -R pythony:pythony /root/EXTRAT/
+RUN $STARTUPDIR/step_2.sh
+RUN $STARTUPDIR/unroot.sh
 #groupadd -g "${GID}" python \
 #  && 
-USER python
+USER pythony
 CMD ["/usr/sbin/sshd", "-D", "-e"]
 CMD [ "/usr/bin/supervisord", "-n" , "-c","/etc/supervisor/supervisord.conf" ]
