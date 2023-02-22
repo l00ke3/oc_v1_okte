@@ -12,7 +12,7 @@ DEBIAN_FRONTEND=noninteractive apt-get -f install  -y \
 apt-get -f install  -y \ xfce4-goodies xfce4\
         thunar tumbler xarchiver \
         mugshot thunar-archive-plugin \
-        dbus-x11 xauth xinit x11-xserver-utils xdg-utils \
+        dbus-x11 xauth xinit x11-xserver-utils xdg-utils xserver-xorg-video-dummy \
         tightvncserver novnc python3-websockify python3-pyvirtualdisplay \
         pwgen supervisor \
         xvfb xserver-xephyr ttf-wqy-zenhei python2.7 #< /dev/null > /dev/null
