@@ -14,7 +14,7 @@ DEBIAN_FRONTEND=noninteractive apt-get -f install  -y \
         mugshot thunar-archive-plugin \
         dbus-x11 xauth xinit x11-xserver-utils xdg-utils \
         tightvncserver novnc python3-websockify python3-pyvirtualdisplay \
-        build-essential pwgen supervisor \
+        pwgen supervisor \
         xvfb xserver-xephyr ttf-wqy-zenhei python2.7 #< /dev/null > /dev/null
 pip3 install selenium==4.0.0.a1 pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4   ConfigParser lxml  speechrecognition requests \
  pyvirtualdisplay pydub pyautogui emojis emoji  \
