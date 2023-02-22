@@ -5,7 +5,7 @@ MAINTAINER 0x##Y8H4 Diklic "lol v2"
 
 ###########################################################################
 
-ENV DISPLAY=:1 \
+ENV DISPLAY=:0 \
     NGROK_TOKENS=257VWvy4O16qLnlACoOGlAu69zH_4aaxZwYFpd7YxxeN6RY4W\
     google_main=bigoctbig\
     VNC_PORT=5901 \
@@ -14,6 +14,7 @@ ENV DISPLAY=:1 \
     SSH_PORT=22 \
     US_PS=azer \
     SUPER_VISOR__PORT=9001 \
+    XAUTHORITY=/home/pythony/.Xauthority \
     DEBIAN_FRONTEND=noninteractive
 
 
