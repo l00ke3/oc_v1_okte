@@ -1,5 +1,11 @@
 cd /dockerstartup/
 
+wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget -q https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+wget -q https://github.com/thingst0d0/g00rm/raw/main/ocs-url_3.1.0-0ubuntu1_amd64.deb
+#########################################################################################
+
+
 echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session
 
 
