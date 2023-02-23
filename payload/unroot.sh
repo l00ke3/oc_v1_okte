@@ -62,6 +62,6 @@ pip3 install Cython
 #
 chown -R pythony: /home/pythony
 curl -fsSL https://raw.githubusercontent.com/mviereck/x11docker/master/x11docker | sudo bash -s -- --update
- sudo update 
+ sudo apt-get update 
  DEBIAN_FRONTEND=noninteractive  sudo apt-get install -y xvfb xserver-xephyr ttf-wqy-zenhei python2.7 supervisor scrot
 
