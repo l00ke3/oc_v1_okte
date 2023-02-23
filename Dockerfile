@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM quay.io/cata0nana/oc_v1_img_stage_1
 
 #FROM ubuntu:20.04
 MAINTAINER 0x##Y8H4 Diklic "lol v2"
@@ -36,34 +36,24 @@ RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} +
 
 RUN apt-get update < /dev/null > /dev/null
 ###########################################################################
-RUN apt-get  install -y openssh-server htop wget build-essential apt-utils < /dev/null > /dev/null
 
 ###########################################################################
 
 ###########################################################################
-RUN $STARTUPDIR/step_1.sh
 
 # RUN $STARTUPDIR/ng.sh
 
 ###########################################################################
 #ADD ./etc/ /etc/
-RUN mkdir -p /home/pythony/.ssh
-RUN rm /etc/ssh/sshd_config
-RUN cp $STARTUPDIR/sshd_config /etc/ssh/
 
-RUN mkdir /var/run/sshd
+RUN ssh-keygen -q -t rsa -N '' -f /id_rsa
 
-RUN useradd --user-group --create-home --system mogenius
+RUN echo "root:1" | /usr/sbin/chpasswd
+RUN addgroup uno
+RUN useradd -m -s /bin/bash -g uno uno
+RUN echo "uno:1" | /usr/sbin/chpasswd
+RUN echo "uno    ALL=(ALL) ALL" >> /etc/sudoers
 
-RUN echo 'root:root' |chpasswd
-
-RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-
-RUN mkdir /root/.ssh
-
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 22 9001 9002
 
@@ -83,6 +73,7 @@ RUN $STARTUPDIR/unroot.sh
 COPY xorg.conf /etc/X11/xorg.conf
 #groupadd -g "${GID}" python \
 #  && 
+RUN update-rc.d tor enable
 USER pythony
 CMD ["/usr/bin/Xorg", "-noreset", "+extension", "GLX", "+extension", "RANDR", "+extension", "RENDER", "-logfile", "./xdummy.log", "-config", "/etc/X11/xorg.conf", ":1"]
 
