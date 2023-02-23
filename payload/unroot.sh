@@ -51,7 +51,7 @@ echo "needs_root_rights = no"
 sed -i 's/console/anybody/g' /etc/X11/Xwrapper.config
 #dpkg-reconfigure xserver-xorg-legacy
 dpkg-reconfigure xserver-xorg-legacy allowed_users=anybody
-dpkg-reconfigure xserver-xorg-legacy needs_root_rights = no
+dpkg-reconfigure xserver-xorg-legacy needs_root_rights=no
 cat /etc/X11/Xwrapper.config
 echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> /home/pythony/.bashrc
 pip3 install Cython
