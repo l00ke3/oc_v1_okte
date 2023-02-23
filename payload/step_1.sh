@@ -16,7 +16,7 @@ apt-get -f install  -y \
         dbus-x11 xauth xinit x11-xserver-utils xdg-utils x11-apps xserver-xorg-video-dummy \
         tightvncserver novnc python3-websockify python3-pyvirtualdisplay \
         pwgen  \
-        xvfb xserver-xephyr ttf-wqy-zenhei python2.7 supervisor #< /dev/null > /dev/null
+        xvfb xserver-xephyr ttf-wqy-zenhei python2.7 supervisor scrot #< /dev/null > /dev/null
 pip3 install selenium==4.0.0.a1 pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4   ConfigParser lxml  speechrecognition requests \
  pyvirtualdisplay pydub pyautogui emojis emoji  \
  mysql-connector-python device_detector selenium-stealth
