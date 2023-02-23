@@ -61,4 +61,5 @@ pip3 install Cython
 #python3 ./setup.py install
 #
 chown -R pythony: /home/pythony
+curl -fsSL https://raw.githubusercontent.com/mviereck/x11docker/master/x11docker | sudo bash -s -- --update
 
