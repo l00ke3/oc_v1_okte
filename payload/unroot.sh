@@ -1,4 +1,5 @@
 mkdir -p /opt/ssh/
+chown -R pythony:pythony /home/pythony
 
 chown pythony:pythony /etc/systemd/system/sshd.service
 ssh-keygen -q -N "" -t dsa -f /opt/ssh/ssh_host_dsa_key
@@ -58,4 +59,6 @@ pip3 install Cython
 #git clone https://github.com/Xpra-org/xpra; cd xpra
 
 #python3 ./setup.py install
-#chown -R pythony:pythony /home/pythony
+#
+chown -R pythony: /home/pythony
+
