@@ -23,7 +23,7 @@ echo $username':'$password | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 mkdir -p /home/pythony/.config
 chown pythony:pythony /home/pythony/.config
-apt install --assume-yes xfce4 desktop-base xfce4-terminal nano
+apt install --assume-yes xfce4 desktop-base xfce4-terminal nano google-chrome-stable
 apt remove --assume-yes gnome-terminal
 apt --assume-yes autoremove
 apt install --assume-yes ./chrome-remote-desktop_current_amd64.deb
