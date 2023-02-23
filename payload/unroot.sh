@@ -26,11 +26,6 @@ rm firefox-58.0.1.tar.bz2
 
  wget -q https://ftp.mozilla.org/pub/firefox/releases/97.0.1/linux-x86_64/en-GB/firefox-97.0.1.tar.bz2 && tar -xf firefox-97.0.1.tar.bz2 -C $home_py/EXTRAT/firefox-97.0.1/
 
-wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-wget -q https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-wget -q https://github.com/thingst0d0/g00rm/raw/main/ocs-url_3.1.0-0ubuntu1_amd64.deb
-#########################################################################################
-
 echo " * 3 ------------- > INSTALL geckodriver-v0.32.0 "
 wget -q https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz && tar -xf geckodriver-v0.32.0-linux64.tar.gz
 rm geckodriver-v0.32.0-linux64.tar.gz
