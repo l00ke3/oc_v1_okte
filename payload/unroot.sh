@@ -2,14 +2,13 @@ mkdir -p /opt/ssh/
 chown -R pythony: /home/pythony
 
 chown pythony:pythony /etc/systemd/system/sshd.service
-ssh-keygen -q -N "" -t dsa -f /opt/ssh/ssh_host_dsa_key
-ssh-keygen -q -N "" -t rsa -b 4096 -f /opt/ssh/ssh_host_rsa_key
-ssh-keygen -q -N "" -t ecdsa -f /opt/ssh/ssh_host_ecdsa_key
-ssh-keygen -q -N "" -t ed25519 -f /opt/ssh/ssh_host_ed25519_key
-
+chown -R pythony:/var/log
+sudo chmod 666 /var/log/supervisor/
 chmod 600 /opt/ssh/*
 chmod 644 /opt/ssh/sshd_config
 chown -R pythony. /opt/ssh/
+chown -R pythony. /etc/systemd/system/
+
 systemctl daemon-reload
 
 home_py="/home/pythony"
@@ -65,3 +64,7 @@ curl -fsSL https://raw.githubusercontent.com/mviereck/x11docker/master/x11docker
  sudo apt-get update 
  DEBIAN_FRONTEND=noninteractive  sudo apt-get install -y xvfb xserver-xephyr ttf-wqy-zenhei python2.7 supervisor scrot
 
+ssh-keygen -q -N "" -t dsa -f /opt/ssh/ssh_host_dsa_key
+ssh-keygen -q -N "" -t rsa -b 4096 -f /opt/ssh/ssh_host_rsa_key
+ssh-keygen -q -N "" -t ecdsa -f /opt/ssh/ssh_host_ecdsa_key
+ssh-keygen -q -N "" -t ed25519 -f /opt/ssh/ssh_host_ed25519_key
