@@ -77,6 +77,8 @@ COPY xorg.conf /etc/X11/xorg.conf
 #groupadd -g "${GID}" python \
 #  && 
 RUN update-rc.d tor enable
+RUN chmod g+wx /var/log/ && \
+    chmod g+wx /opt/local/
 USER pythony
 CMD ["/usr/bin/Xorg", "-noreset", "+extension", "GLX", "+extension", "RANDR", "+extension", "RENDER", "-logfile", "./xdummy.log", "-config", "/etc/X11/xorg.conf", ":1"]
 
