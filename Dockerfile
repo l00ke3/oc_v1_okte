@@ -90,4 +90,4 @@ CMD ["/usr/bin/Xorg", "-noreset", "+extension", "GLX", "+extension", "RANDR", "+
 RUN mkdir /home/pythony/supervisor
 #CMD ["/usr/sbin/sshd", "-D", "-e"]
 CMD [ "/usr/bin/supervisord", "-n" , "-c","/etc/supervisor/supervisord.conf" ]
-CMD ["/bin/sleep", "3650d"]
+#CMD ["/bin/sleep", "3650d"]
