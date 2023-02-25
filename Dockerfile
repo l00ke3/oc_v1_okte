@@ -78,6 +78,8 @@ COPY xorg.conf /etc/X11/xorg.conf
 #  && 
 RUN update-rc.d tor enable
 RUN mkdir -p /opt/local/
+RUN mkdir -p /var/run/supervisord
+RUN chown pythony /var/run/supervisord
 RUN touch /var/run/supervisord.pid
 RUN chown pythony /var/run/supervisord.pid
 RUN chmod g+wx /var/log/ && \
